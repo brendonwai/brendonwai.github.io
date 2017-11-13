@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
+    <link href="./style/prism.css" rel="stylesheet" />
     <link href="./style/welcome.css" rel="stylesheet"/>
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+  <script src="./script/prism.js" data-manual></script>
   <script src="./script/welcome.js"></script>
     <title>Welcome</title>
   </head>
   <body>
-    <div class="terminal">
-      <div class="terminal-title">
-        <span class="title-text">
-          Terminal -- bash --
-          <span class="terminal-dimension">80x10</span>
-        </span>
-      </div>
-      <div class="terminal-body">
-        <p id="typedText"></p>
+    <div class="terminal-container">
+      <div class="terminal">
+        <div class="terminal-title">
+          <span class="title-text">
+            Terminal -- bash --
+            <span class="terminal-dimension">120x40</span>
+          </span>
+        </div>
+        <div class="terminal-body language-cpp">
+          <code id="typedText"></code>
+        </div>
       </div>
     </div>
   </body>

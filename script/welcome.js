@@ -4,13 +4,11 @@ $(document).ready(function(e) {
     autoStart: false,
     lifeLike: true
   })
-  .tiType('class ')
-  .tiPause(300).tiSettings({speed: 150})
-  .tiType('Programmer {')
-  .tiBreak().tiPause(500).tiSettings({speed:100})
-  .tiType('public: ').tiBreak().tiPause(300)
-  .tiType('String name = ').tiPause(200).tiSettings({speed:70})
-  .tiType('"Brendon Wai";')
+  .tiType(Prism.highlight('class Programmer {',Prism.languages.cpp))
   .tiBreak().tiPause(500)
-  .tiType('');
+  .tiType(Prism.highlight('public: ',Prism.languages.cpp)).tiBreak().tiPause(300)
+  .tiType(Prism.highlight('std::string name = "Brendon Wai";',Prism.languages.cpp))
+  .tiBreak().tiPause(500)
+  .tiType(Prism.highlight('std::string message = "Welcome to my homepage!";',Prism.languages.cpp))
+  .tiBreak().tiType('}');
 });
