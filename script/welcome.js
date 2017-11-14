@@ -1,5 +1,23 @@
 $(document).ready(function(e) {
   TweenLite.to($('.terminal'), 0.6, {opacity: 1, onComplete: terminalType});
+
+  var controller = new ScrollMagic.Controller({
+		globalSceneOptions: {
+			triggerHook: 'onCenter'
+		}
+	});
+
+  var scene1 = new ScrollMagic.Scene({
+    triggerElement: '.terminal-container'
+  })
+  .setTween($('.navbar'), 0.5, {opacity: 0})
+  .addTo(controller);
+
+  var scene2 = new ScrollMagic.Scene({
+    triggerElement: '.self-intro-container'
+  })
+  .setTween([$('.navbar'), $('.self-intro-container')], 0.75, {opacity: 1})
+  .addTo(controller);
 });
 
 function terminalType() {
