@@ -18,7 +18,23 @@ $(document).ready(function(e) {
   })
   .setTween([$('.navbar'), $('.self-intro-container')], 0.75, {opacity: 1})
   .addTo(controller);
+
+  var scene3 = new ScrollMagic.Scene({
+    triggerElement: '.experience-container'
+  })
+  .setTween($('.experience-container'), 0.75, {opacity: 1})
+  .addTo(controller);
+
+  var tween = TweenMax.staggerFromTo($('li'), 0.2, {opacity: 0, scale: 0.5},{opacity: 1, scale: 1}, 0.1);
+
+  var scene4 = new ScrollMagic.Scene({
+    triggerElement: '.skill-container'
+  })
+  .setTween(tween)
+  .addTo(controller);
 });
+
+
 
 function terminalType() {
   $('#typedText').typeIt({
