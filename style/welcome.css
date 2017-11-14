@@ -12,8 +12,6 @@ body {
 
 section {
   height: 100vh;
-  display: flex;
-  align-items: center;
 }
 
 /* text editor styles */
@@ -75,6 +73,8 @@ code {
 
 .panel {
   color: #f0f0f0;
+  display: flex;
+  align-items: center;
 }
 
 .section-wrapper {
@@ -86,4 +86,32 @@ code {
 .self-intro-container {
   opacity: 0;
   background-color: #383838;
+}
+
+.skill-container {
+  background-color: #383838;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  height: auto;
+}
+
+#skill-wrapper {
+  padding: 2%;
+  background-color: #303030;
+  border-radius: 20px;
+  height: 70%;
+  width: 100%;
+}
+
+.section-title {
+  color: #42bef8;
+}
+
+li {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+ul h5 {
+  color: #42bef8;
 }
