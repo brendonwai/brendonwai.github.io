@@ -1,15 +1,20 @@
 .terminal-container {
   position: relative;
-  padding: 90px 0;
+  height: 100vh;
+}
+
+.placeholder {
+  height: 20%;
 }
 
 /* text editor styles */
 .terminal {
-  width: 100%; height: 100%;
+  width: 95%;
   top: 0;
   display: block;
   margin: auto;
-  max-width: 85%;
+  max-width: 900px;
+  min-height: 320px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 70px;
   clear: both;
@@ -18,7 +23,9 @@
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out; }
+  transition: all 0.5s ease-out;
+  opacity: 0;
+ }
 
 .terminal-title {
   padding: 5px 0;
@@ -35,7 +42,7 @@
 
 .terminal-body {
   height: 100%;
-  min-height: 320px;
+  min-height: 35vh;
   background-color: rgba(0, 0, 0, 0.85);
   padding: 10px;
   color: #f0f0f0;
@@ -51,3 +58,8 @@
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
+
+code {
+  background-color: rgba(0,0,0,0);
+  color: #f0f0f0;
+}
