@@ -32,6 +32,26 @@ $(document).ready(function(e) {
   })
   .setTween(tween)
   .addTo(controller);
+
+  $('#website-component-btn').click(function() {
+    // $('.used').css({'border-radius': '10px'}).effect('highlight',{color: '#42bef8'}, 3000);
+    $('.used').animate({
+      'background-color' : '#42bef8',
+      'border-radius' : '10px'
+    },1000);
+  });
+
+  controller.scrollTo( function (newpos) {
+    TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+  })
+
+  $('a[href^="#"]').click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    if ($(id).length > 0){
+      controller.scrollTo(id);
+    }
+  });
 });
 
 
