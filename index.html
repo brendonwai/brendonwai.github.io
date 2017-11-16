@@ -7,13 +7,14 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
     <link href="./style/prism.css" rel="stylesheet" />
+    <link href="./style/jquery-ui.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="./style/welcome.css" rel="stylesheet"/>
     <title>Welcome</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#top">
         <img id="profile-brand" src="./assets/brand.PNG" width="50" height="50">
         Brendon Wai
       </a>
@@ -24,10 +25,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#intro-anchor">Intro <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#experience-anchor">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skillset-anchor">Skillset</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,6 +50,7 @@
         </ul>
       </div>
     </nav>
+    <a id="top"></a>
     <h1 style="color: #f0f0f0; text-align: center;">Website Under Construction...</h1>
     <section class="terminal-container container-fluid">
       <div style="height: 20vh;"></div>
@@ -61,6 +66,7 @@
         </div>
       </div>
     </section>
+    <a id="intro-anchor"></a>
     <section class="self-intro-container container-fluid panel">
       <div class="section-wrapper media">
         <img class="align-self-center mr-3" src="./assets/profile.jpg">
@@ -72,6 +78,7 @@
         </div>
       </div>
     </section>
+    <a id="experience-anchor"></a>
     <section class="experience-container container-fluid panel">
       <div id="experience" class="section-wrapper">
       <h1 class="section-title">Experience</h1>
@@ -82,9 +89,11 @@
   Unum est sine dolore esse, alterum cum voluptate. Facit enim ille duo seiuncta ultima bonorum, quae ut essent vera, coniungi debuerunt; Sed residamus, inquit, si placet. Id enim natura desiderat. Aliud igitur esse censet gaudere, aliud non dolere. Piso igitur hoc modo, vir optimus tuique, ut scis, amantissimus. Itaque hic ipse iam pridem est reiectus; Scientiam pollicentur, quam non erat mirum sapientiae cupido patria esse cariorem. Aut haec tibi, Torquate, sunt vituperanda aut patrocinium voluptatis repudiandum. Tria genera cupiditatum, naturales et necessariae, naturales et non necessariae, nec naturales nec necessariae. Quodcumque in mentem incideret, et quodcumque tamquam occurreret.</p>
       </div>
     </section>
+    <a id="skillset-anchor"></a>
     <section class="skill-container container-fluid panel">
       <div id="skill-wrapper" class="section-wrapper">
-        <h1 class="section-title">Skillset</h1>
+        <h1 class="section-title" style="display:inline-block;">Skillset</h1>
+        <button class="btn btn-secondary" id="website-component-btn" style="float:right; display:none;">See what this website is made with</button>
         <div id="skill-list" class="row">
           <ul class="list-unstyled col-12 col-sm-6 col-md-4">
             <h5>Languages</h5>
@@ -102,14 +111,14 @@
                 <span class="badge badge-secondary">Novice</span>
               </div>
             </li>
-            <li class="media skill-item">
+            <li class="media skill-item used">
               <img class="align-self-center mr-3" src="./assets/css3.png" width="70" height="70">
               <div class="media-body">
                 <h6 class="mt-0 mb-1">CSS3</h6>
                 <span class="badge badge-success">Intermediate</span>
               </div>
             </li>
-            <li class="media skill-item">
+            <li class="media skill-item used">
               <img class="align-self-center mr-3" src="./assets/html5.png" width="70" height="70">
               <div class="media-body">
                 <h6 class="mt-0 mb-1">HTML5</h6>
@@ -123,7 +132,7 @@
                 <span class="badge badge-primary">Advanced</span>
               </div>
             </li>
-            <li class="media skill-item">
+            <li class="media skill-item used">
               <img class="align-self-center mr-3" src="./assets/javascript.png" width="70" height="70">
               <div class="media-body">
                 <h6 class="mt-0 mb-1">JavaScript</h6>
@@ -161,7 +170,7 @@
                 <span class="badge badge-secondary">Novice</span>
               </div>
             </li>
-            <li class="media skill-item">
+            <li class="media skill-item used">
               <img class="align-self-center mr-3" src="./assets/bootstrap.png" width="70" height="70">
               <div class="media-body">
                 <h6 class="mt-0 mb-1">Bootstrap</h6>
@@ -175,7 +184,7 @@
                 <span class="badge badge-success">Intermediate</span>
               </div>
             </li>
-            <li class="media skill-item">
+            <li class="media skill-item used">
               <img class="align-self-center mr-3" src="./assets/jquery.png" width="70" height="70">
               <div class="media-body">
                 <h6 class="mt-0 mb-1">jQuery</h6>
@@ -267,12 +276,15 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+  <script src="./script/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="./script/ScrollMagic.js"></script>
   <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
   <script src="./script/animation.gsap.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/CSSPlugin.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js"></script>
   <script src="./script/prism.js" data-manual></script>
   <script src="./script/welcome.js"></script>
   </body>
