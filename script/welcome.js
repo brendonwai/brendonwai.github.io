@@ -13,10 +13,14 @@ $(document).ready(function(e) {
   .setTween($('.navbar'), 0.5, {opacity: 0})
   .addTo(controller);
 
+  var intro_tween = new TimelineMax()
+  .to([$('.navbar'), $('.self-intro-container')], 0.75, {opacity: 1})
+  .from($('#intro-question-mark'), 1, {ease: Bounce.easeOut, y: -200, opacity: 0});
+
   var scene2 = new ScrollMagic.Scene({
     triggerElement: '.self-intro-container'
   })
-  .setTween([$('.navbar'), $('.self-intro-container')], 0.75, {opacity: 1})
+  .setTween(intro_tween)
   .addTo(controller);
 
   var scene3 = new ScrollMagic.Scene({
@@ -52,9 +56,17 @@ $(document).ready(function(e) {
       controller.scrollTo(id);
     }
   });
+
+  $('.card').hover(card_over, card_leave);
 });
 
+function card_over(){
+  TweenMax.to(this, 0.5, {scale: 1.04});
+}
 
+function card_leave(){
+  TweenMax.to(this, 0.5, {scale: 1});
+}
 
 function terminalType() {
   $('#typedText').typeIt({

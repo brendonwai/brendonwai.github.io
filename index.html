@@ -74,7 +74,8 @@
       <div class="section-wrapper media">
         <img class="align-self-center img-responsive mr-3" src="./assets/profile.jpg">
         <div class="media-body self-intro-paragraph">
-          <h1 class="section-title">Who am I?</h1>
+          <h1 class="section-title" style="display:inline-block">Who am I</h1>
+          <h1 class="section-title" id="intro-question-mark" style="display:inline-block">?</h1>
           <p class="lead">Lorem ipsum dolor sit amet, ex vis quidam semper percipitur. Quis alia lucilius eos ei. Eu equidem neglegentur comprehensam his, quo at aeque semper cotidieque. Cum ea natum lorem ridens, ei augue veniam latine mei. Natum ridens diceret vim ad, possim integre vis ex, te graeco doctus vim.
 
   Ea epicurei senserit mea, nostro regione sanctus id his. Id eros habeo vis. Denique convenire in mei. Ad populo invidunt mel, nec ad ferri liber quaeque.</p>
@@ -93,7 +94,7 @@
                 <h4 class="card-title">Associate Software Engineer</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Toshiba America Business Solutions</h6>
                 <p class="card-text">Current Position</p>
-                <button class="btn btn-primary">Details</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#toshiba-modal">Details</button>
               </div>
             </div>
           </div>
@@ -104,7 +105,7 @@
                 <h4 class="card-title">Web Development Intern</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Mentormint</h6>
                 <p class="card-text">Aug 2016 - Oct 2016</p>
-                <button class="btn btn-primary">Details</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#mentormint-modal">Details</button>
               </div>
             </div>
           </div>
@@ -115,7 +116,7 @@
                 <h4 class="card-title">iOS Development Intern</h4>
                 <h6 class="card-subtitle mb-2 text-muted">DriftChat</h6>
                 <p class="card-text">Apr 2016 - Aug 2016</p>
-                <button class="btn btn-primary">Details</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#driftchat-modal">Details</button>
               </div>
             </div>
           </div>
@@ -312,6 +313,98 @@
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="mentormint-modal" tabindex="-1" role="dialog" aria-labelledby="mentormintModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-lg vertical-align-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="mentormintModalLabel">Web Development Intern&nbsp;&nbsp;</h5>
+              <span class="lead text-muted">Aug 2016 - Oct 2016</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 class="display-4 modal-content-title">Mentormint</h5>
+              <dl class="row">
+                <dt class="col-sm-3 description-title">Job Responsibilities</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li>Perform manual testing and test case analysis on Mentormint website</li>
+                    <li>Create efficient and effective automated test scripts using the ruby-selenium-headless framework</li>
+                    <li>Perform TDD practices and communicate closely with the development team</li>
+                  </ul>
+                </dd>
+                <dt class="col-sm-3 description-title">Results</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li>Developed exhaustive runtime-efficient test cases on all Mentormint websites</li>
+                    <li>Promoted the use of Capybara test-kit for realistic user interaction simulations and elimination of redundant test cases</li>
+                  </ul>
+                </dd>
+                <dt class="col-sm-3 description-title">Benefits</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li>Enabled significant productivity improvement by eliminating time-consuming and labor-intensive manual testing</li>
+                    <li>Established fully automated testing that closely resembles real-world user actions in extremely efficient manner due to headless framework</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="driftchat-modal" tabindex="-1" role="dialog" aria-labelledby="driftchatModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-lg vertical-align-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="driftchatModalLabel">iOS Development Intern&nbsp;&nbsp;</h5>
+              <span class="lead text-muted">Apr 2016 - Aug 2016</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 class="display-4 modal-content-title">DriftChat</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="toshiba-modal" tabindex="-1" role="dialog" aria-labelledby="toshibaModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-lg vertical-align-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="toshibaModalLabel">Associate Software Engineer&nbsp;&nbsp;</h5>
+              <span class="lead text-muted">Nov 2017 - Present</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 class="display-4 modal-content-title">Toshiba America Business Solutions</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

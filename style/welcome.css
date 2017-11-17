@@ -108,7 +108,7 @@ code {
   width: 100%;
 }
 
-.section-title, .card-title, ul h5 {
+.section-title, .card-title, ul h5, .modal-title, .description-title {
   color: #42bef8;
 }
 
@@ -130,4 +130,40 @@ li.skill-item{
 
 .card-col {
   margin-bottom: 10px;
+}
+
+.modal-content {
+  border-radius: 10px;
+  background-color: #383838;
+  border-color: #383838;
+  color: #f0f0f0;
+}
+
+.modal-header, .modal-body, .modal-footer {
+  border-width: 0;
+}
+
+.close {
+  color: #f0f0f0;
+}
+
+.vertical-alignment-helper {
+  display: table;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.vertical-align-center {
+  display: table-cell;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+.modal-content {
+  width: inherit;
+  max-width: inherit;
+  height: inherit;
+  margin: 0 auto;
+  pointer-events: all;
 }
