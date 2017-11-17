@@ -18,7 +18,43 @@ $(document).ready(function(e) {
   })
   .setTween([$('.navbar'), $('.self-intro-container')], 0.75, {opacity: 1})
   .addTo(controller);
+
+  var scene3 = new ScrollMagic.Scene({
+    triggerElement: '.experience-container'
+  })
+  .setTween($('.experience-container'), 0.75, {opacity: 1})
+  .addTo(controller);
+
+  var tween = TweenMax.staggerFromTo($('li.skill-item'), 0.2, {opacity: 0, scale: 0.5},{opacity: 1, scale: 1}, 0.1);
+
+  var scene4 = new ScrollMagic.Scene({
+    triggerElement: '.skill-container'
+  })
+  .setTween(tween)
+  .addTo(controller);
+
+  $('#website-component-btn').click(function() {
+    // $('.used').css({'border-radius': '10px'}).effect('highlight',{color: '#42bef8'}, 3000);
+    $('.used').animate({
+      'background-color' : '#42bef8',
+      'border-radius' : '10px'
+    },1000);
+  });
+
+  controller.scrollTo( function (newpos) {
+    TweenMax.to(window, 0.5, {scrollTo: {y: newpos}});
+  })
+
+  $('a[href^="#"]').click(function (e) {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    if ($(id).length > 0){
+      controller.scrollTo(id);
+    }
+  });
 });
+
+
 
 function terminalType() {
   $('#typedText').typeIt({
