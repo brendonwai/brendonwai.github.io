@@ -36,20 +36,6 @@
           <li class="nav-item">
             <a class="nav-link" href="#contact-anchor">Contact</a>
           </li>
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li> -->
         </ul>
       </div>
     </nav>
@@ -72,13 +58,18 @@
     <a id="intro-anchor"></a>
     <section class="self-intro-container container-fluid panel">
       <div class="section-wrapper media">
-        <img class="align-self-center img-responsive mr-3" src="./assets/profile.jpg">
+        <img class="align-self-center img-responsive mr-3" src="./assets/profile.png" height="400">
         <div class="media-body self-intro-paragraph">
-          <h1 class="section-title">Who am I?</h1>
-          <p class="lead">Lorem ipsum dolor sit amet, ex vis quidam semper percipitur. Quis alia lucilius eos ei. Eu equidem neglegentur comprehensam his, quo at aeque semper cotidieque. Cum ea natum lorem ridens, ei augue veniam latine mei. Natum ridens diceret vim ad, possim integre vis ex, te graeco doctus vim.
-
-  Ea epicurei senserit mea, nostro regione sanctus id his. Id eros habeo vis. Denique convenire in mei. Ad populo invidunt mel, nec ad ferri liber quaeque.</p>
+          <h1 class="section-title" style="display:inline-block">Who am I</h1>
+          <h1 class="section-title" id="intro-question-mark" style="display:inline-block">?</h1>
+          <p class="lead">My name is Brendon Wai and I am a recent Computer Science graduate from University of California, Irvine. Currently I work as an Associate Software Engineer at Toshiba America Business Solutions. My areas of interest include mobile/web/game development as well as machine learning. I also love to participate in recreational activities such as 🎨, 📷, and playing 🎸. Please feel free to follow the links and check out some of my works. You can also reach out to me through the contact section below for any reason, because that's what I built this website for 😉</p>
         </div>
+        <!-- Typing-indicator here -->
+        <!-- <div class="typing-indicator">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div> -->
       </div>
     </section>
     <a id="experience-anchor"></a>
@@ -93,7 +84,7 @@
                 <h4 class="card-title">Associate Software Engineer</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Toshiba America Business Solutions</h6>
                 <p class="card-text">Current Position</p>
-                <button class="btn btn-primary">Details</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#toshiba-modal">Details</button>
               </div>
             </div>
           </div>
@@ -104,7 +95,7 @@
                 <h4 class="card-title">Web Development Intern</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Mentormint</h6>
                 <p class="card-text">Aug 2016 - Oct 2016</p>
-                <button class="btn btn-primary">Details</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#mentormint-modal">Details</button>
               </div>
             </div>
           </div>
@@ -115,7 +106,7 @@
                 <h4 class="card-title">iOS Development Intern</h4>
                 <h6 class="card-subtitle mb-2 text-muted">DriftChat</h6>
                 <p class="card-text">Apr 2016 - Aug 2016</p>
-                <button class="btn btn-primary">Details</button>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#driftchat-modal">Details</button>
               </div>
             </div>
           </div>
@@ -307,11 +298,137 @@
     </section>
     <a id="contact-anchor"></a>
     <section class="contact-container container-fluid panel">
-      <div class="section-wrapper">
+      <div class="section-wrapper" style="width: 80%">
         <h1 class="section-title">Let's Get in Touch!</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <div style="padding-bottom: 5px;">
+          <h3 class="social-media-title">Social Media</h3>
+          <div id="social-media-block">
+            <a target="_blank" style="padding-right: 15px;" title="follow me on facebook" href="http://www.facebook.com/brendon.wai.5"><img alt="follow me on facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook40x40.png" border=0></a>
+            <a target="_blank" title="follow me on linkedin" href="https://www.linkedin.com/in/brendonwai"><img src="./assets/linkedin.png" border=0></a>
+          </div>
+        </div>
+        <h4 class="lead text-muted">OR</h4>
+        <div>
+          <h3 class="email-title">Email Me<span class="lead text-muted"> (email function under development)</span></h3>
+          <form id="needs-validation" novalidate>
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input type="text" class="form-control" id="name" placeholder="What do they call you?" required>
+              <div class="invalid-feedback">
+                You must have a name, right?
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email: </label>
+              <input type="email" class="form-control" id="email" placeholder="name@email.com" required>
+              <div class="invalid-feedback">
+                But really though, what's your email?
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="What do you want to say?" required></textarea>
+              <div class="invalid-feedback">
+                There's something you want to tell me, no?
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="mentormint-modal" tabindex="-1" role="dialog" aria-labelledby="mentormintModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-lg vertical-align-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="mentormintModalLabel">Web Development Intern&nbsp;&nbsp;</h5>
+              <span class="lead text-muted">Aug 2016 - Oct 2016</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 class="display-4 modal-content-title">Mentormint</h5>
+              <dl class="row">
+                <dt class="col-sm-3 description-title">Job Responsibilities</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li>Perform manual testing and test case analysis on Mentormint website</li>
+                    <li>Create efficient and effective automated test scripts using the ruby-selenium-headless framework</li>
+                    <li>Perform TDD practices and communicate closely with the development team</li>
+                  </ul>
+                </dd>
+                <dt class="col-sm-3 description-title">Results</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li>Developed exhaustive runtime-efficient test cases on all Mentormint websites</li>
+                    <li>Promoted the use of Capybara test-kit for realistic user interaction simulations and elimination of redundant test cases</li>
+                  </ul>
+                </dd>
+                <dt class="col-sm-3 description-title">Benefits</dt>
+                <dd class="col-sm-9">
+                  <ul>
+                    <li>Enabled significant productivity improvement by eliminating time-consuming and labor-intensive manual testing</li>
+                    <li>Established fully automated testing that closely resembles real-world user actions in extremely efficient manner due to headless framework</li>
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="driftchat-modal" tabindex="-1" role="dialog" aria-labelledby="driftchatModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-lg vertical-align-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="driftchatModalLabel">iOS Development Intern&nbsp;&nbsp;</h5>
+              <span class="lead text-muted">Apr 2016 - Aug 2016</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 class="display-4 modal-content-title">DriftChat</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="toshiba-modal" tabindex="-1" role="dialog" aria-labelledby="toshibaModalLabel" aria-hidden="true">
+      <div class="vertical-alignment-helper">
+        <div class="modal-dialog modal-lg vertical-align-center" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="toshibaModalLabel">Associate Software Engineer&nbsp;&nbsp;</h5>
+              <span class="lead text-muted">Nov 2017 - Present</span>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5 class="display-4 modal-content-title">Toshiba America Business Solutions</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
